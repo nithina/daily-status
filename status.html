@@ -1,0 +1,30 @@
+<div ng-controller="StatusFormCtrl">
+    <form name="statusForm">
+        Date:
+        <input type="date" id="statusDate" name="statusDate" ng-model="data.statusDate"
+               placeholder="yyyy-MM-dd" required />                    
+        Project:
+        <select name="statusProject" ng-model="data.statusProject">
+            <option selected value="na">N/A</option>
+            <option ng-repeat="option in projects" value="{{option.name}}">{{option.name}}</option>
+        </select>
+        Activity Type:
+        <select name="statusActivity" ng-model="data.statusActivity">
+            <option ng-repeat="option in activityTypes" value="{{option.activity}}">{{option.activity}}</option>
+        </select>
+        Time Spent (hours:minutes)
+        <select name="statusHrs" ng-model="data.statusHrs">
+            <option ng-repeat="option in data.generateHrs" value="{{option}}">{{option}}</option>
+        </select>
+        <select name="statusMins" ng-model="data.statusMins">
+            <option ng-repeat="option in data.generateMins" value="{{option}}">{{option}}</option>
+        </select>
+        <br/>
+        <br/>
+        Activity Description: <br/>
+        <textarea ng-model="data.statusDescription" name="statusDescription" required="statusDescription">
+        </textarea>
+        <br/><br/>
+        <input type="submit" id="submit" value="Save" />
+    </form>
+</div>
