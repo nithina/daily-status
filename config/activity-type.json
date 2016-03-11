@@ -1,0 +1,12 @@
+{  
+   "Types":[  
+      {  
+         "id":1,
+         "activity":"Coding"
+      },
+      {  
+         "id":2,
+         "activity":"Project Management"
+      }
+   ]
+}

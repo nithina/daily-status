@@ -1,1 +1,30 @@
-My Page
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/services/generateNo.js"></script>
+        <script src="app/controllers/mainController.js"></script>
+        <script src="app/controllers/statusForm.js"></script>
+    </head>
+    <body>
+        <h3>Daily Status</h3>
+        <div ng-app="qbApp">
+            <div ng-controller="MainController">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul class="nav">
+                                <li><a href="#/apply">Daily status</a></li>            
+                            </ul>
+                        </div>
+                        <div class="col-md-9">
+                            <div ng-view></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
