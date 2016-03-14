@@ -1,5 +1,5 @@
 <div ng-controller="StatusFormCtrl">
-    <form name="statusForm">
+    <form novalidate name="statusForm">
         Date:
         <select name="statusDate" ng-model="data.statusDate">
             <option ng-repeat="option in data.generateDates" value="{{option}}">{{option}}</option>
@@ -23,9 +23,9 @@
         <br/>
         <br/>
         Activity Description: <br/>
-        <textarea ng-model="data.statusDescription" name="statusDescription" required="statusDescription">
+        <textarea ng-required="" ng-minlength="5" ng-model="data.statusDescription" name="statusDescription" required="statusDescription">
         </textarea>
         <br/><br/>
-        <input type="submit" id="submit" value="Save" />
+        <input type="submit" id="submit" ng-click="update(data)" value="Save" />
     </form>
 </div>
