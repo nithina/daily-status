@@ -1,8 +1,5 @@
 var app = angular.module("qbApp", [
-    'ngRoute',
-    'qbApp.home',
-    'qbApp.generateNo',
-    'qbApp.status'
+    'ngRoute'
     ])
         .config(['$routeProvider',
             function ($routeProvider) {

@@ -1,6 +1,4 @@
-angular.module('qbApp.home', ['ngRoute'])
-
- .controller('MainController', function($scope, $route, $routeParams, $location) {
+app.controller('MainController', function($scope, $route, $routeParams, $location) {
      $scope.$route = $route;
      $scope.$location = $location;
      $scope.$routeParams = $routeParams;
