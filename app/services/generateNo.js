@@ -10,4 +10,16 @@ angular.module('qbApp.generateNo', [])
                 }
                 return noArray;
             }
+        }).service('generateDays', function ($filter) {
+            this.days = function (range) {
+                dateArray = [];
+                
+                for (var day = 0; day < range; day++) {
+                    var d = new Date();
+                    e = d.setDate(d.getDate()- day);
+                    dateArray.push($filter('date')(e, "dd/MM/yyyy"));                    
+                }
+                
+                return dateArray;
+            }
         });

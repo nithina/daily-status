@@ -1,8 +1,9 @@
 <div ng-controller="StatusFormCtrl">
     <form name="statusForm">
         Date:
-        <input type="date" id="statusDate" name="statusDate" ng-model="data.statusDate"
-               placeholder="yyyy-MM-dd" required />                    
+        <select name="statusDate" ng-model="data.statusDate">
+            <option ng-repeat="option in data.generateDates" value="{{option}}">{{option}}</option>
+        </select>       
         Project:
         <select name="statusProject" ng-model="data.statusProject">
             <option selected value="na">N/A</option>
