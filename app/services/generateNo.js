@@ -16,8 +16,8 @@ angular.module('qbApp.generateNo', [])
                 
                 for (var day = 0; day < range; day++) {
                     var d = new Date();
-                    e = d.setDate(d.getDate()- day);
-                    dateArray.push($filter('date')(e, "dd/MM/yyyy"));                    
+                    statusDate = d.setDate(d.getDate()- day);
+                    dateArray.push($filter('date')(statusDate, "dd/MM/yyyy"));                    
                 }
                 
                 return dateArray;
