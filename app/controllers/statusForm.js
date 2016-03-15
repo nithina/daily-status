@@ -1,6 +1,6 @@
-app.controller("StatusFormCtrl", ['$scope', '$http', 'generateNo', 'generateDays',
-    '$routeParams', function ($scope, $http, generateNo, generateDays, $routeParams) {
-        $scope.params = $routeParams;
+app.controller("StatusFormCtrl", ['$scope', '$http', '$rootScope', '$state', 'generateNo', 'generateDays',
+    function ($scope, $http, $rootScope, $state, generateNo, generateDays) {
+//        $scope.params = $routeParams;
         $http.get('config/project.json').success(function (data) {
             $scope.projects = data.Projects;
         });
@@ -17,10 +17,10 @@ app.controller("StatusFormCtrl", ['$scope', '$http', 'generateNo', 'generateDays
             statusDate: daysArray[0],
             generateDates: daysArray,
             generateHrs: generateNo.paddednumbers(24),
-            generateMins: generateNo.paddednumbers(60),
-        }
+            generateMins: generateNo.paddednumbers(60)
+        };
 
         $scope.update = function (data) {
             $scope.submitted = true;
         };
-    }])
+    }]);
