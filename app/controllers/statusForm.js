@@ -1,6 +1,5 @@
 app.controller("StatusFormCtrl", ['$scope', '$http', '$rootScope', '$state', 'generateNo', 'generateDays',
     function ($scope, $http, $rootScope, $state, generateNo, generateDays) {
-//        $scope.params = $routeParams;
         $http.get('config/project.json').success(function (data) {
             $scope.projects = data.Projects;
         });
