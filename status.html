@@ -23,9 +23,34 @@
         <br/>
         <br/>
         Activity Description: <br/>
-        <textarea ng-required="" ng-minlength="5" ng-model="data.statusDescription" name="statusDescription" required="statusDescription">
+        <textarea ng-model="data.statusDescription" name="statusDescription" required="statusDescription">
         </textarea>
         <br/><br/>
         <input type="submit" id="submit" ng-click="update(data)" value="Save" />
     </form>
+    <div id="todo-list">
+        <div ng-repeat="status in dailyStatus track by $index" >            
+            <div class="row">
+                        <div>
+                            <br>
+                            <small >Posted on: {{status.statusDate}} </small><br>
+                         </div>
+
+                        <div>
+                           <span>
+                                {{status.text}}
+                            </span>
+                           <br>
+                        </div>
+
+                        <div>
+                            <span>{{status.statusHrs}}:{{status.statusMins}} hour(s)</span><br>
+                            <span>Activity: {{status.statusActivity}}</span><br><br>
+                            <span>Project: {{status.statusProject}}</span>                            
+                            <br>
+                        </div>
+
+                    </div>
+        </div>
+    </div>
 </div>
