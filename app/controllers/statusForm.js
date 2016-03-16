@@ -7,6 +7,9 @@ app.controller("StatusFormCtrl", ['$scope', '$http', '$rootScope', '$state', 'ge
             $scope.activityTypes = data.Types;
             $scope.data.statusActivity = $scope.activityTypes[0].activity;
         });
+        
+        var hrs  = 24;
+        var mins = 60;
 
         daysArray = generateDays.days(8);
         $scope.data = {
@@ -15,8 +18,8 @@ app.controller("StatusFormCtrl", ['$scope', '$http', '$rootScope', '$state', 'ge
             statusMins: '00',
             statusDate: daysArray[0],
             generateDates: daysArray,
-            generateHrs: generateNo.paddednumbers(24),
-            generateMins: generateNo.paddednumbers(60)
+            generateHrs: generateNo.paddednumbers(hrs),
+            generateMins: generateNo.paddednumbers(mins)
         };
 
         $scope.update = function (data) {

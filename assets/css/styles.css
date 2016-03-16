@@ -1,6 +1,6 @@
 
 #header {
-    height: 50px;
+    height: 80px;
     color: black;
     font-size:30px;
     padding: 20px;
@@ -19,4 +19,13 @@
 }
 .container {
     padding: 30px;
+}
+.block {
+    display: block;
+}
+.break-bottom {
+   margin-bottom: 1em; 
+}
+.nav {
+    list-style-type: none;
 }
