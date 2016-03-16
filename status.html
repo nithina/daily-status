@@ -1,39 +1,42 @@
+<span class="block break-bottom">
+    <a href back-button>Home</a>
+</span>
 <!-- Page Content -->
-        <div id="page-content-wrapper">
-<div ng-controller="StatusFormCtrl">
-    <form novalidate name="statusForm">
-        <span class="block">
-        Date:
-        <select name="statusDate" ng-model="data.statusDate">
-            <option ng-repeat="option in data.generateDates" value="{{option}}">{{option}}</option>
-        </select>       
-        Project:
-        <select name="statusProject" ng-model="data.statusProject">
-            <option selected value="na">N/A</option>
-            <option ng-repeat="option in projects" value="{{option.name}}">{{option.name}}</option>
-        </select>
-        Activity Type:
-        <select name="statusActivity" ng-model="data.statusActivity">
-            <option ng-repeat="option in activityTypes" value="{{option.activity}}">{{option.activity}}</option>
-        </select>
-        Time Spent (hours:minutes)
-        <select name="statusHrs" ng-model="data.statusHrs">
-            <option ng-repeat="option in data.generateHrs" value="{{option}}">{{option}}</option>
-        </select>
-        <select class="break" name="statusMins" ng-model="data.statusMins">
-            <option ng-repeat="option in data.generateMins" value="{{option}}">{{option}}</option>
-        </select>  
-        </span>
-        <p>
-            <span class="block">Activity Description:</span>
-        <textarea maxlength="180" ng-model="data.statusDescription" name="statusDescription" required>
-        </textarea>
-        <span ng-show="statusForm.$submitted && statusForm.statusDescription.$invalid">The Activity Description is required.</span>
-        <span class="block">
-        {{180 - data.statusDescription.length}}
-        </span>
-        </p>
-        <input type="submit" id="submit" ng-click="update(data)" value="Save" />
-    </form>
+<div id="page-content-wrapper">            
+    <div ng-controller="StatusFormCtrl">
+        <form novalidate name="statusForm">
+            <span class="block">
+                Date:
+                <select name="statusDate" ng-model="data.statusDate">
+                    <option ng-repeat="option in data.generateDates" value="{{option}}">{{option}}</option>
+                </select>       
+                Project:
+                <select name="statusProject" ng-model="data.statusProject">
+                    <option selected value="na">N/A</option>
+                    <option ng-repeat="option in projects" value="{{option.name}}">{{option.name}}</option>
+                </select>
+                Activity Type:
+                <select name="statusActivity" ng-model="data.statusActivity">
+                    <option ng-repeat="option in activityTypes" value="{{option.activity}}">{{option.activity}}</option>
+                </select>
+                Time Spent (hours:minutes)
+                <select name="statusHrs" ng-model="data.statusHrs">
+                    <option ng-repeat="option in data.generateHrs" value="{{option}}">{{option}}</option>
+                </select>
+                <select class="break" name="statusMins" ng-model="data.statusMins">
+                    <option ng-repeat="option in data.generateMins" value="{{option}}">{{option}}</option>
+                </select>  
+            </span>
+            <p>
+                <span class="block">Activity Description:</span>
+                <textarea maxlength="180" ng-model="data.statusDescription" name="statusDescription" required>
+                </textarea>
+                <span ng-show="statusForm.$submitted && statusForm.statusDescription.$invalid">The Activity Description is required.</span>
+                <span class="block">
+                    {{180 - data.statusDescription.length}}
+                </span>
+            </p>
+            <input type="submit" id="submit" ng-click="update(data)" value="Save" />
+        </form>
+    </div>
 </div>
-        </div>

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="assets/css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
         <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -12,13 +13,14 @@
         <script src="assets/js/angular-ui-router.js"></script>
         <script src="app/app.js"></script>
         <script src="app/services/generateNo.js"></script>
+        <script src="app/directives/directives.js"></script>
         <script src="app/controllers/mainController.js"></script>
         <script src="app/controllers/statusForm.js"></script>
     </head>
     <body>
         <div ng-app="qbApp">
             <div ng-controller="MainController">
-
+                
                 <!-- header -->
                 <div id="heading_wrapper">
                     <header id="header">
