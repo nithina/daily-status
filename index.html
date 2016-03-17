@@ -6,10 +6,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
         <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="assets/js/angular-ui-router.js"></script>
         <script src="app/app.js"></script>
         <script src="app/services/generateNo.js"></script>
@@ -20,7 +20,7 @@
     <body>
         <div ng-app="qbApp">
             <div ng-controller="MainController">
-                
+
                 <!-- header -->
                 <div id="heading_wrapper">
                     <header id="header">
@@ -30,11 +30,29 @@
                         </div>
                     </header>
                 </div>
-
-                <div class="container">                    
-                <div ui-view></div>
+                <div id="wrapper">
+                    <!-- Sidebar -->
+                    <div id="sidebar-wrapper">
+                        <nav>
+                            <ul class="nav sidebar-nav">        
+                                <li class="sidebar-brand"><a ui-sref="apply">Daily status</a></li>        
+                            </ul>     
+                        </nav>
+                    </div>
+                    <!--<div ng-view="menu"></div>-->
+                    <!--<div class="container">-->
+                    <!-- Page Content -->
+                    <div id="page-content-wrapper">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div ui-view></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /#page-content-wrapper -->
                 </div>
-
                 <!-- footer -->
                 <div id="footer-wrapper">
                     <footer id="footer"></footer>

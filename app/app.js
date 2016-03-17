@@ -6,7 +6,7 @@ var app = angular.module("qbApp", ['ui.router'])
                 $stateProvider
                         .state('/', {
                             url: "/",
-                            templateUrl: 'app/views/menu.html'
+                            templateUrl: 'app/views/home.html'
                         })
                         .state('apply', {
                             url: "/apply",
