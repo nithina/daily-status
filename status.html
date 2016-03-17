@@ -2,9 +2,9 @@
     <a href back-button>Home</a>
 </span>
 <!-- Page Content -->
-<div id="page-content-wrapper">            
-    <div ng-controller="StatusFormCtrl">
-        <form novalidate name="statusForm">
+<div id="page-content-wrapper">
+<div ng-controller="StatusFormCtrl">
+    <form novalidate name="statusForm">
             <span class="block">
                 Date:
                 <select name="statusDate" ng-model="data.statusDate">
@@ -38,5 +38,30 @@
             </p>
             <input type="submit" id="submit" ng-click="update(data)" value="Save" />
         </form>
+    <div id="todo-list">
+        <div ng-repeat="status in dailyStatus track by $index" >            
+            <div class="row">
+                        <div>
+                            <br>
+                            <small >Posted on: {{status.statusDate}} </small><br>
+                         </div>
+
+                        <div>
+                           <span>
+                                {{status.text}}
+                            </span>
+                           <br>
+                        </div>
+
+                        <div>
+                            <span>{{status.statusHrs}}:{{status.statusMins}} hour(s)</span><br>
+                            <span>Activity: {{status.statusActivity}}</span><br><br>
+                            <span>Project: {{status.statusProject}}</span>                            
+                            <br>
+                        </div>
+
+                    </div>
+        </div>
     </div>
+</div>
 </div>
