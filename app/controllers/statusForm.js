@@ -1,6 +1,6 @@
 app.controller("StatusFormCtrl", ['$scope', '$http', 'generateNo', 'generateDays',
     function ($scope, $http, generateNo, generateDays) {
-        
+
         $scope.dailyStatus = [];
 
         $http.get('config/project.json').success(function (data) {
@@ -10,8 +10,8 @@ app.controller("StatusFormCtrl", ['$scope', '$http', 'generateNo', 'generateDays
             $scope.activityTypes = data.Types;
             $scope.data.statusActivity = $scope.activityTypes[0].activity;
         });
-        
-        var hrs  = 24;
+
+        var hrs = 24;
         var mins = 60;
 
         daysArray = generateDays.days(8);
@@ -26,15 +26,16 @@ app.controller("StatusFormCtrl", ['$scope', '$http', 'generateNo', 'generateDays
         };
 
         $scope.update = function (data) {
-            
-            $scope.dailyStatus.unshift({
-                        statusDate: data.statusDate,
-                        statusProject: data.statusProject,
-                        statusActivity: data.statusActivity,
-                        statusHrs: data.statusHrs,
-                        statusMins: data.statusMins,
-			text: data.statusDescription,
-			done: false
-		});
+            if ($scope.statusForm.$valid) {
+                $scope.dailyStatus.unshift({
+                    statusDate: data.statusDate,
+                    statusProject: data.statusProject,
+                    statusActivity: data.statusActivity,
+                    statusHrs: data.statusHrs,
+                    statusMins: data.statusMins,
+                    text: data.statusDescription,
+                    done: false
+                });
+            }
         };
     }]);
