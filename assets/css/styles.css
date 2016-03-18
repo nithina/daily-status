@@ -120,6 +120,16 @@
     color: #525252;
     background: none;
 }
+.status-detail-block {
+  float: left;
+  padding-right: 22px;
+  margin-bottom: 20px;
+}
+
+.status-textarea {
+  float: left;
+  padding-right: 20px;
+}
 
 @media(min-width:768px) {
     #wrapper {

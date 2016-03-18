@@ -3,32 +3,44 @@
 </span>
 <!-- Page Content -->
 <div id="page-content-wrapper">
-<div ng-controller="StatusFormCtrl">
-    <form novalidate name="statusForm">
-            <span class="block">
-                Date:
-                <select name="statusDate" ng-model="data.statusDate">
-                    <option ng-repeat="option in data.generateDates" value="{{option}}">{{option}}</option>
-                </select>       
-                Project:
-                <select name="statusProject" ng-model="data.statusProject">
-                    <option selected value="na">N/A</option>
-                    <option ng-repeat="option in projects" value="{{option.name}}">{{option.name}}</option>
-                </select>
-                Activity Type:
-                <select name="statusActivity" ng-model="data.statusActivity">
-                    <option ng-repeat="option in activityTypes" value="{{option.activity}}">{{option.activity}}</option>
-                </select>
-                Time Spent (hours:minutes)
-                <select name="statusHrs" ng-model="data.statusHrs">
-                    <option ng-repeat="option in data.generateHrs" value="{{option}}">{{option}}</option>
-                </select>
-                <select class="break" name="statusMins" ng-model="data.statusMins">
-                    <option ng-repeat="option in data.generateMins" value="{{option}}">{{option}}</option>
-                </select>  
-            </span>
-            <p>
-                <span class="block">Activity Description:</span>
+
+    <div ng-controller="StatusFormCtrl">
+        <form novalidate name="statusForm" class="break-bottom">
+            <div class="clearfix">
+
+                <span class="status-detail-block">  
+                    <label for="status-date">Date:</label>
+                    <select id="status-date" name="statusDate" ng-model="data.statusDate">
+                        <option ng-repeat="option in data.generateDates" value="{{option}}">{{option}}</option>
+                    </select>  
+                </span>
+
+                <span class="status-detail-block">
+                    <label for="status-project">Project:</label>
+                    <select id="status-project" name="statusProject" ng-model="data.statusProject">
+                        <option selected value="na">N/A</option>
+                        <option ng-repeat="option in projects" value="{{option.name}}">{{option.name}}</option>
+                    </select>
+                </span>
+                <span class="status-detail-block">
+                    <label for="status-activity">Activity Type:</label>
+                    <select id="status-activity" name="statusActivity" ng-model="data.statusActivity">
+                        <option ng-repeat="option in activityTypes" value="{{option.activity}}">{{option.activity}}</option>
+                    </select>
+                </span>
+                <span class="status-detail-block">
+                    <label for="status-project">Time Spent (hours:minutes)</label>
+                    <select name="statusHrs" ng-model="data.statusHrs">
+                        <option ng-repeat="option in data.generateHrs" value="{{option}}">{{option}}</option>
+                    </select>
+                    <select class="break" name="statusMins" ng-model="data.statusMins">
+                        <option ng-repeat="option in data.generateMins" value="{{option}}">{{option}}</option>
+                    </select>
+                </span>
+            </div>
+            <p>                
+                <span class="block"><label for="status-project">Activity Description:</label></span>
+
                 <textarea maxlength="180" ng-model="data.statusDescription" name="statusDescription" required>
                 </textarea>
                 <span ng-show="statusForm.$submitted && statusForm.statusDescription.$invalid">The Activity Description is required.</span>
@@ -36,32 +48,30 @@
                     {{180 - data.statusDescription.length}}
                 </span>
             </p>
-            <input type="submit" id="submit" ng-click="update(data)" value="Save" />
+            <span class="input-group-btn">
+
+                <input type="submit" class="btn btn-default" id="submit" ng-click="update(data)" value="Save" />
+            </span>
+
         </form>
-    <div id="todo-list">
-        <div ng-repeat="status in dailyStatus track by $index" >            
-            <div class="row">
-                        <div>
-                            <br>
-                            <small >Posted on: {{status.statusDate}} </small><br>
-                         </div>
 
-                        <div>
-                           <span>
-                                {{status.text}}
-                            </span>
-                           <br>
-                        </div>
-
-                        <div>
-                            <span>{{status.statusHrs}}:{{status.statusMins}} hour(s)</span><br>
-                            <span>Activity: {{status.statusActivity}}</span><br><br>
-                            <span>Project: {{status.statusProject}}</span>                            
-                            <br>
-                        </div>
-
+        <div id="todo-list">
+            <div ng-repeat="status in dailyStatus track by $index" >            
+                <div class="clearfix break-bottom">
+                    <div>
+                        <span>
+                            {{status.text}}
+                        </span>
+                        <br>
                     </div>
+                    <div>
+                        <div>{{status.statusHrs}}:{{status.statusMins}} hour(s)</div>
+                        <div>Activity: {{status.statusActivity}}</div>
+                        <div>Project: {{status.statusProject}}</div>                            
+                        <div><small >Posted on: {{status.statusDate}} </small></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
