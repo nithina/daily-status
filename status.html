@@ -41,7 +41,7 @@
             <p>                
                 <span class="block"><label for="status-project">Activity Description:</label></span>
 
-                <textarea maxlength="180" ng-model="data.statusDescription" name="statusDescription" required>
+                <textarea rows="4" cols="115" maxlength="180" ng-model="data.statusDescription" name="statusDescription" required>
                 </textarea>
                 <span ng-show="statusForm.$submitted && statusForm.statusDescription.$invalid">The Activity Description is required.</span>
                 <span class="block">

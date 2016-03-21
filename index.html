@@ -30,28 +30,8 @@
                         </div>
                     </header>
                 </div>
-                <div id="wrapper">
-                    <!-- Sidebar -->
-                    <div id="sidebar-wrapper">
-                        <nav>
-                            <ul class="nav sidebar-nav">        
-                                <li class="sidebar-brand"><a ui-sref="apply">Daily status</a></li>        
-                            </ul>     
-                        </nav>
-                    </div>
-                    <!--<div ng-view="menu"></div>-->
-                    <!--<div class="container">-->
-                    <!-- Page Content -->
-                    <div id="page-content-wrapper">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div ui-view></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /#page-content-wrapper -->
+                <div id="wrapper" ui-view="menu">
+                    
                 </div>
                 <!-- footer -->
                 <div id="footer-wrapper">

@@ -4,13 +4,23 @@ var app = angular.module("qbApp", ['ui.router'])
             function ($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider.otherwise("/")
                 $stateProvider
-                        .state('/', {
+                        .state('home', {
                             url: "/",
-                            templateUrl: 'app/views/home.html'
+                            views: {
+                                "menu": {
+                                    templateUrl: "app/views/menu.html"
+                                }
+                            }
                         })
-                        .state('apply', {
-                            url: "/apply",
-                            templateUrl: 'status.html',
+                        
+                        .state('home.apply', {
+                            url: "apply/",
+                            views: {
+                                "apply" :
+                                        {
+                                    templateUrl: "status.html",        
+                                }
+                            },
                             controller: 'StatusFormCtrl'
                         })
             }]);
